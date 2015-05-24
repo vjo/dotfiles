@@ -1,0 +1,7 @@
+[user]
+	name = Victor Jolissaint
+	email = victor.jolissaint@gmail.com
+[core]
+	editor = /usr/bin/vim
+[alias]
+	today = log --since=midnight --author='Victor Jolissaint' --oneline
