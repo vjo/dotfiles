@@ -1,7 +1,30 @@
 [user]
 	name = Victor Jolissaint
 	email = victor.jolissaint@gmail.com
-[core]
-	editor = /usr/bin/vim
+[diff]
+    renames = true
+    tool = vimdiff
+[color]
+    ui = true
+[oh-my-zsh]
+    # uncomment in big repo
+    #hide-status = 1
+    #hide-dirty = 1
+[merge]
+    tool = mvimdiff
+[mergetool "mvimdiff"]
+    cmd = /Applications/MacVim.app/Contents/MacOS/Vim -d -f "$LOCAL" "$MERGED" "$REMOTE"
+[http]
+    postBuffer = 524288000
 [alias]
+    co = checkout
+    cob = checkout -b
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
 	today = log --since=midnight --author='Victor Jolissaint' --oneline
+[core]
+    excludesfile = ~/.gitignore_global
