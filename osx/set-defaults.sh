@@ -21,6 +21,8 @@ echo "Set dock size to 36px"
 defaults write com.apple.dock tilesize -int 36
 echo "Disable dock magnification"
 defaults write com.apple.dock magnification -bool false
+echo "Show battery percentage"
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
 # Menu bar
 echo "Set clock date format to HH:mm no flashing separators"
