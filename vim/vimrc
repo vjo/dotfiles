@@ -1,0 +1,147 @@
+filetype off
+call pathogen#infect()
+filetype plugin indent on
+call pathogen#helptags()
+
+" Enable syntax highlighting
+"let g:solarized_termcolors=256
+syntax enable
+syntax on
+colorscheme desert
+set background=dark
+
+let mapleader = ","
+let g:mapleader = ","
+
+let NERDTreeIgnore=[ '\.cmi$' ,'\.cmx$' ,'\.o$' ,'\.annot$' ,'\~$', '\.class', 'target', 'build']
+set wildignore+=*.o,*.obj,.git,**/build/**,dist,_darcs,deps,*.beam,logs,ebin,ebin_test,*.pyc,*.class,**/target/**
+
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+nmap <leader>sw :call SwapParams("forwards")<cr>
+nmap <leader>sb :call SwapParams("backwards")<cr>
+
+" empty search
+nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>s :AckFromSearch<CR>
+
+map <F5> "qdt,"sx"wdib"wP"sp"qp
+map <leader>T :CommandTTag<CR>
+
+
+nnoremap / /\v
+vnoremap / /\v
+"set gdefault
+set incsearch
+nnoremap <tab> %
+vnoremap <tab> %
+"nnoremap ; :
+inoremap jj <ESC>
+nnoremap <silent> <F3> :YRShow<cr>
+inoremap <silent> <F3> <ESC>:YRShow<cr>
+
+set wildmode=longest,list,full
+set wildmenu
+
+set nocompatible
+set hidden
+"set autochdir
+set showmatch
+set autowrite
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" mapping of <C-L> below)
+set hlsearch
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+set nostartofline
+set ruler
+set laststatus=2
+set confirm
+set visualbell
+
+" And reset the terminal code for the visual bell.  If visualbell is set, and
+" this line is also included, vim will neither flash nor beep.  If visualbell
+" is unset, this does nothing.
+set t_vb=
+set cmdheight=2
+set number
+
+" Quickly time out on keycodes, but never time out on mappings
+set notimeout ttimeout ttimeoutlen=200
+
+" Use <F11> to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F11>
+
+" Indentation settings for using 2 spaces instead of tabs.
+" Do not change 'tabstop' from its default value of 8 with this setup.
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+let g:ackprg="ack -r -H --nocolor --nogroup --column"
+
+set diffopt+=iwhite
+
+" For folding
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+
+"set foldmethod=manual
+
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+autocmd BufWrite *.* call DeleteTrailingWS()
+set tabpagemax=200
+
+set expandtab
+
+let g:pep8_map='<leader>8'
+let g:pyflakes_use_quickfix = 0
+
+"au FileType python set omnifunc=pythoncomplete#Complete
+"let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
+map <leader>n :NERDTreeToggle<CR>
+map <Leader>] <Plug>MakeGreen
+
+set statusline=[%n]
+set statusline+=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
+"set foldmethod=indent
+
+set directory=~/.vim/tmp/swap/   " swap files
+
+command Fabdev !fab make_egg dev update_dev
+map <F2> :!fab make_egg dev update_dev <CR><CR>
+
+cmap w!! %!sudo tee > /dev/null %
