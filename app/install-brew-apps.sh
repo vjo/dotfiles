@@ -4,7 +4,7 @@ if ! brew_loc="$(type -p brew)" || [ -z "$brew_loc" ]; then
     echo "Install brew"
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-    app_list =(
+    app_list=(
         'vim'
         'git'
         'ack'

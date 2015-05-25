@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if npm_loc="$(type -p npm)" || [ -z "$npm_loc" ]; then
-    app_list =(
+    app_list=(
         'castnow'
         'keybase-installer'
     )

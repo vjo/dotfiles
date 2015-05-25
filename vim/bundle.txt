@@ -1,4 +1,0 @@
-command-t
-nerdcommenter
-vim-airline
-vim-fugitive

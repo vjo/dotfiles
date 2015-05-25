@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 if brew_cast_loc="$(type -p brew cast)" || [ -z "$brew_cast_loc" ]; then
-    app_list =(
-        'Firefoxdeveloperedition'
+    app_list=(
         'firefox'
         'chromium'
         'evernote'
@@ -13,7 +12,7 @@ if brew_cast_loc="$(type -p brew cast)" || [ -z "$brew_cast_loc" ]; then
         'spectacle'
         'skype'
         'steam'
-        'pushbullet'
+        #'pushbullet' not available yet
         'openemu'
         'hubic'
         'tunnelblick'
