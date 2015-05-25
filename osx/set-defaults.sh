@@ -8,9 +8,9 @@ defaults write com.apple.screencapture location ~/Pictures/screencaptures
 
 # Keyboard & Mouse
 echo "Set a shorter delay until key repeat"
-defaults write NSGlobalDomain InitialKeyRepeat -int 12
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 echo "Set a fast key repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain KeyRepeat -int 2
 echo "Set mouse speed to resonable fast"
 defaults write NSGlobalDomain com.apple.mouse.scaling -float 3
 echo "Disable natural scrolling"
