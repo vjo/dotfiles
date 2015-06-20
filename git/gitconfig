@@ -26,5 +26,6 @@
     type = cat-file -t
     dump = cat-file -p
 	today = log --since=midnight --author='Victor Jolissaint' --oneline
+    undo-commit = reset --soft @^
 [core]
     excludesfile = ~/.gitignore_global
