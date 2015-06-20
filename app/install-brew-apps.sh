@@ -49,6 +49,7 @@ else
         'jpeg'
         'libtool'
         'node'
+        'nvm'
         'sbt'
         'tree'
         'yasm'

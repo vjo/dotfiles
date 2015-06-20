@@ -63,3 +63,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### Added for nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
