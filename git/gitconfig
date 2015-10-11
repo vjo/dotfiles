@@ -29,3 +29,4 @@
     undo-commit = reset --soft @^
 [core]
     excludesfile = ~/.gitignore_global
+	editor = /usr/bin/vim
