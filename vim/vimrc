@@ -13,6 +13,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/vim-distinguished'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -173,3 +174,13 @@ command Fabdev !fab make_egg dev update_dev
 map <F2> :!fab make_egg dev update_dev <CR><CR>
 
 cmap w!! %!sudo tee > /dev/null %
+
+" CtrlP options
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|dist)|\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
