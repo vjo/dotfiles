@@ -86,5 +86,26 @@ echo "Require password immediatly after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
+# Speed up by removing animation (good for old Mac)
+#echo "Disable animations when open/closing window"
+#defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+#echo "Disable animation with "
+#defaults write -g QLPanelAnimationDuration -float 0
+#echo "Speed up window resize"
+#defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+#echo "Disable animation on info window"
+#defaults write com.apple.finder DisableAllAnimations -bool true
+#echo "Disable animation when opening app from dock"
+#defaults write com.apple.dock launchanim -bool false
+#echo "Disable animation in mission control"
+#defaults write com.apple.dock expose-animation-duration -float 0.1
+#echo "Delay dock auto hide"
+#defaults write com.apple.Dock autohide-delay -float 0
+#echo "Disable animation when sending an email (mail.app)"
+#defaults write com.apple.mail DisableReplyAnimations -bool true
+#defaults write com.apple.mail DisableSendAnimations -bool true
+#echo "Disable Safari web page render delay"
+#defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25
+
 echo "Kill affected applications"
 for app in Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
