@@ -3,6 +3,7 @@
 if npm_loc="$(type -p npm)" || [ -z "$npm_loc" ]; then
     app_list=(
         'castnow'
+        'tldr'
         'keybase-installer'
     )
 
