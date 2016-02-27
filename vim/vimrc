@@ -17,6 +17,10 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ternjs/tern_for_vim'
 
+" After adding a new plugin:
+" :so ~/.vimrc
+" :PluginInstall
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
