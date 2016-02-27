@@ -15,6 +15,7 @@ Plugin 'Lokaltog/vim-distinguished'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ternjs/tern_for_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
