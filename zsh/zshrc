@@ -21,6 +21,10 @@ alias bm='apparix --add-mark \!*'
 alias portal='apparix --add-portal \!*'
 alias als='(test "x" !=  "x\!*") && ls `(apparix --try-current-first -favour rOl \!* || echo -n /dev/null)`'
 
+# Custom aliases used as memo 
+alias screen_res='system_profiler SPDisplaysDataType | grep Resolution'
+alias dontsleep='caffeinate -u -t 3600' # prevent sleep for 1 hour
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
