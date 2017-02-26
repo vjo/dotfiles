@@ -78,6 +78,8 @@ echo "Save document to disk by default (not to cloud)"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 echo "Avoid creating .DS_Store files on network volumes"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+echo "Avoid creating .DS_Store files on USB volumes"
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 echo "Disable auto-correct"
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 echo "Disable smart dashes as they’re annoying when typing code"
