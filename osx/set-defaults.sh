@@ -85,6 +85,8 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 echo "Require password immediatly after sleep or screen saver begins"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+echo "Stop iTunes responding to media keys presses"
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
 # Speed up by removing animation (good for old Mac)
 #echo "Disable animations when open/closing window"
