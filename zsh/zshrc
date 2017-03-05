@@ -24,6 +24,7 @@ alias als='(test "x" !=  "x\!*") && ls `(apparix --try-current-first -favour rOl
 # Custom aliases used as memo 
 alias screen_res='system_profiler SPDisplaysDataType | grep Resolution'
 alias dontsleep='caffeinate -u -t 3600' # prevent sleep for 1 hour
+alias weather='curl wttr.in' # could set particular city: wttr.in/London
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
