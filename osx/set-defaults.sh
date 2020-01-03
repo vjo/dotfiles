@@ -5,6 +5,7 @@ echo "Create ~/Pictures/screencaptures if it does not exists"
 mkdir -p ~/Pictures/screencaptures
 echo "Set screenshots location to ~/Pictures/screencaptures"
 defaults write com.apple.screencapture location ~/Pictures/screencaptures
+defaults write com.apple.screencapture show-thumbnail -bool FALSE
 
 # Keyboard & Mouse
 echo "Set a shorter delay until key repeat"
